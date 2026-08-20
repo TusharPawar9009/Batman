@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Batman | Gotham</title>
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial;
+      color:white;
+      background:#050505;
+    }
+    nav{
+      padding:20px 8%;
+      background:#000;
+      display:flex;
+      justify-content:space-between;
+      position:sticky;
+      top:0;
+    }
+    nav b{color:#ffd000;font-size:25px}
+    nav a{color:white;text-decoration:none;margin:10px}
+
+    .hero{
+      height:90vh;
+      display:flex;
+      align-items:center;
+      padding:8%;
+      background:
+        linear-gradient(#0008,#000c),
+        url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+    }
+
+    h1{
+      font-size:90px;
+      margin:0;
+      color:#ffd000;
+      text-shadow:0 0 20px #ffd000;
+    }
+
+    .hero p{font-size:20px;max-width:600px}
+
+    .btn{
+      display:inline-block;
+      padding:14px 25px;
+      background:#ffd000;
+      color:#000;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    section{padding:70px 8%;text-align:center}
+
+    h2{font-size:45px;color:#ffd000}
+
+    .cards{
+      display:flex;
+      gap:25px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .card{
+      width:300px;
+      background:#111;
+      border:1px solid #333;
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      border-color:#ffd000;
+    }
+
+    .card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
+
+    .card h3{color:#ffd000}
+
+    footer{
+      text-align:center;
+      padding:30px;
+      background:#000;
+      color:#777;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <b>🦇 BATMAN</b>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#gotham">Gotham</a>
+    <a href="#heroes">Heroes</a>
+  </div>
+</nav>
+
+<div class="hero" id="home">
+  <div>
+    <h1>BATMAN</h1>
+    <p>
+      The Dark Knight watches over Gotham.
+      No superpowers. No fear. Just justice.
+    </p>
+    <a class="btn" href="#heroes">ENTER GOTHAM</a>
+  </div>
+</div>
+
+<section id="gotham">
+  <h2>GOTHAM CITY</h2>
+  <p>The city of shadows, crime and the Dark Knight.</p>
+</section>
+
+<section id="heroes">
+  <h2>THE DARK KNIGHT</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="https://images.hdqwalls.com/wallpapers/bthumb/batman-but-never-broken-ek.jpg">
+      <h3>BATMAN</h3>
+      <p>The protector of Gotham.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.hdqwalls.com/download/batman-gotham-city-4k-new-ia-1366x768.jpg">
+      <h3>GOTHAM</h3>
+      <p>A city that never sleeps.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.hdqwalls.com/wallpapers/bthumb/batman-in-batman-vs-superman.jpg">
+      <h3>THE NIGHT</h3>
+      <p>When the signal appears, Batman rises.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.hdqwalls.com/wallpapers/batman-batmobile-in-sleek-black-bp.jpg">
+      <h3>BAT MOBILE</h3>
+      <p>When the signal appears, Batman Mobile Start.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  🦇 BATMAN • GOTHAM CITY
+</footer>
+
+</body>
+</html>
