@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IRON MAN | STARK INDUSTRIES</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#050608;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+:root{
+  --red:#e50914;
+  --gold:#ffc400;
+  --blue:#00d9ff;
+  --dark:#080a0d;
+}
+
+/* NAVBAR */
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 7%;
+  background:#050505ee;
+  border-bottom:1px solid #ffb30055;
+  backdrop-filter:blur(12px);
+}
+
+.logo{
+  color:var(--gold);
+  font-size:25px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+  font-size:13px;
+}
+
+nav a:hover{color:var(--gold)}
+
+/* HERO */
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  padding:8%;
+  position:relative;
+  overflow:hidden;
+
+  background:
+    linear-gradient(90deg,#030303dd,#03030366),
+    url("https://images.hdqwalls.com/download/iron-man-path-to-glory-dn-1920x1080.jpg")
+    center/cover;
+}
+
+.hero-content{max-width:650px;z-index:2}
+
+.tag{
+  color:var(--blue);
+  letter-spacing:5px;
+  font-size:12px;
+}
+
+h1{
+  font-size:clamp(60px,12vw,140px);
+  line-height:.9;
+  margin:20px 0;
+  color:#fff;
+  text-shadow:0 0 30px #e5091488;
+}
+
+h1 span{color:var(--red)}
+
+.hero p{
+  color:#bbb;
+  line-height:1.7;
+  font-size:17px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 28px;
+  background:var(--red);
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  border:1px solid #ff4d4d;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:var(--gold);
+  color:#000;
+  box-shadow:0 0 25px #ffc40088;
+}
+
+/* ARC REACTOR */
+.reactor{
+  position:absolute;
+  right:12%;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle,#fff 5%,#00eaff 15%,#008cff 28%,transparent 30%);
+  border:8px solid #aaa;
+  box-shadow:
+    0 0 25px #00eaff,
+    0 0 70px #008cff;
+  animation:reactor 2s infinite alternate;
+}
+
+@keyframes reactor{
+  from{transform:scale(.9);filter:brightness(.8)}
+  to{transform:scale(1.08);filter:brightness(1.5)}
+}
+
+/* SECTIONS */
+section{padding:80px 7%}
+
+.title{
+  text-align:center;
+  font-size:45px;
+  margin-bottom:50px;
+  color:var(--gold);
+}
+
+.title span{color:var(--red)}
+
+/* PANELS */
+.panels{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.panel{
+  background:linear-gradient(145deg,#15171b,#08090b);
+  border:1px solid #333;
+  padding:30px;
+  min-height:210px;
+  transition:.3s;
+  position:relative;
+  overflow:hidden;
+}
+
+.panel:hover{
+  transform:translateY(-8px);
+  border-color:var(--gold);
+  box-shadow:0 15px 40px #000;
+}
+
+.icon{
+  font-size:45px;
+  margin-bottom:20px;
+}
+
+.panel h3{
+  color:var(--gold);
+  margin-bottom:12px;
+}
+
+.panel p{
+  color:#999;
+  line-height:1.6;
+}
+
+.status{
+  margin-top:20px;
+  color:#00ff91;
+  font-size:12px;
+  letter-spacing:2px;
+}
+
+/* CONTROL CENTER */
+.control{
+  background:#090b0e;
+  border-top:1px solid #222;
+  border-bottom:1px solid #222;
+}
+
+.controls{
+  max-width:900px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.control button{
+  padding:25px;
+  background:#11151a;
+  color:white;
+  border:1px solid #333;
+  cursor:pointer;
+  font-size:15px;
+  transition:.3s;
+}
+
+.control button:hover{
+  background:var(--red);
+  border-color:var(--gold);
+}
+
+#console{
+  margin:25px auto 0;
+  max-width:900px;
+  padding:20px;
+  background:#020304;
+  border:1px solid #00d9ff44;
+  color:#00d9ff;
+  min-height:70px;
+  font-family:monospace;
+}
+
+/* SUITS */
+.suits{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.suit{
+  background:#111;
+  border:1px solid #333;
+  overflow:hidden;
+  transition:.4s;
+}
+
+.suit:hover{
+  transform:scale(1.03);
+  border-color:var(--red);
+}
+
+.suit img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+}
+
+.suit div{padding:20px}
+
+.suit h3{color:var(--gold);margin-bottom:8px}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.gallery img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  cursor:pointer;
+  border:2px solid transparent;
+  transition:.3s;
+}
+
+.gallery img:hover{
+  border-color:var(--gold);
+  transform:scale(1.03);
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:999;
+  background:#000e;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+}
+
+.modal img{
+  max-width:90%;
+  max-height:85vh;
+  border:3px solid var(--gold);
+  box-shadow:0 0 50px #e50914;
+}
+
+.close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:40px;
+  color:white;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:35px;
+  background:#020202;
+  color:#666;
+  border-top:1px solid #222;
+}
+
+footer b{color:var(--gold)}
+
+/* MOBILE */
+@media(max-width:800px){
+
+  nav div:last-child{display:none}
+
+  .hero{
+    min-height:80vh;
+  }
+
+  .reactor{
+    width:130px;
+    height:130px;
+    right:-20px;
+    top:25%;
+    opacity:.5;
+  }
+
+  .panels,
+  .suits{
+    grid-template-columns:1fr;
+  }
+
+  .controls{
+    grid-template-columns:1fr;
+  }
+
+  .gallery{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .gallery img{
+    height:150px;
+  }
+
+  section{padding:60px 5%}
+
+  .title{font-size:35px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="logo">⚡ STARK INDUSTRIES</div>
+
+  <div>
+    <a href="#home">HOME</a>
+    <a href="#systems">SYSTEMS</a>
+    <a href="#suits">SUITS</a>
+    <a href="#gallery">GALLERY</a>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<header class="hero" id="home">
+
+  <div class="reactor"></div>
+
+  <div class="hero-content">
+
+    <div class="tag">STARK INDUSTRIES // MARK VII</div>
+
+    <h1>IRON <span>MAN</span></h1>
+
+    <p>
+      Genius. Billionaire. Engineer. Hero.
+      Welcome to the Stark Industries command interface.
+      Suit up and activate the system.
+    </p>
+
+    <a href="#systems" class="btn">ACTIVATE SYSTEM</a>
+
+  </div>
+</header>
+
+
+<!-- SYSTEM PANELS -->
+<section id="systems">
+
+  <h2 class="title">
+    IRON MAN <span>SYSTEMS</span>
+  </h2>
+
+  <div class="panels">
+
+    <div class="panel">
+      <div class="icon">❤️</div>
+      <h3>ARC REACTOR</h3>
+      <p>
+        High-output energy core powering the Iron Man armor.
+      </p>
+      <div class="status">● ONLINE</div>
+    </div>
+
+    <div class="panel">
+      <div class="icon">🚀</div>
+      <h3>REPULSOR SYSTEM</h3>
+      <p>
+        Advanced propulsion and weapon system integrated
+        into the armor.
+      </p>
+      <div class="status">● READY</div>
+    </div>
+
+    <div class="panel">
+      <div class="icon">🧠</div>
+      <h3>AI CORE</h3>
+      <p>
+        Tactical analysis, suit diagnostics and mission
+        assistance.
+      </p>
+      <div class="status">● ACTIVE</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- INTERACTIVE CONTROL PANEL -->
+<section class="control">
+
+  <h2 class="title">
+    STARK <span>CONTROL</span>
+  </h2>
+
+  <div class="controls">
+
+    <button onclick="activate('⚡ Repulsors activated')">
+      ⚡ REPULSORS
+    </button>
+
+    <button onclick="activate('🚀 Flight system activated')">
+      🚀 FLIGHT MODE
+    </button>
+
+    <button onclick="activate('🛡 Armor defense activated')">
+      🛡 DEFENSE
+    </button>
+
+    <button onclick="activate('🎯 Targeting system online')">
+      🎯 TARGETING
+    </button>
+
+    <button onclick="activate('🔋 Arc Reactor: 100%')">
+      🔋 POWER
+    </button>
+
+    <button onclick="activate('🤖 AI assistant ready')">
+      🤖 AI CORE
+    </button>
+
+  </div>
+
+  <div id="console">
+    > STARK SYSTEM READY...
+  </div>
+
+</section>
+
+
+<!-- SUITS -->
+<section id="suits">
+
+  <h2 class="title">
+    ARMOR <span>COLLECTION</span>
+  </h2>
+
+  <div class="suits">
+
+    <div class="suit">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTP0zZxcauyrN01APzi1STjB24oVGTu_6CsYBslkUy4w&s=10">
+      <div>
+        <h3>MARK I</h3>
+        <p>Prototype armor built for survival.</p>
+      </div>
+    </div>
+
+    <div class="suit">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkl9TkXdAglIO6LrsPNE5fuGXS7e2hZzsYj38g9vPxFg&s=10">
+      <div>
+        <h3>MARK VII</h3>
+        <p>Advanced combat and flight capabilities.</p>
+      </div>
+    </div>
+
+    <div class="suit">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-YZUhQwTGBT4CQ9gQrn49UPKijizbdnDlpzDmslcRHQ&s=10">
+      <div>
+        <h3>STARK TECH</h3>
+        <p>Next-generation armor technology.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PHOTO GALLERY -->
+<section id="gallery">
+
+  <h2 class="title">
+    STARK <span>GALLERY</span>
+  </h2>
+
+  <div class="gallery">
+
+    <img onclick="openImg(this.src)"
+    src="https://images.hdqwalls.com/wallpapers/bthumb/iron-man-art.jpg">
+
+    <img onclick="openImg(this.src)"
+    src="https://images.hdqwalls.com/wallpapers/bthumb/iron-man-qhd.jpg">
+
+    <img onclick="openImg(this.src)"
+    src="https://images.hdqwalls.com/wallpapers/bthumb/iron-man-heart.jpg">
+
+    <img onclick="openImg(this.src)"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh0oB806oteiadG8myG-WSlZTEe5j_qhDi5lVGGDh-dA&s=10">
+
+    <img onclick="openImg(this.src)"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoEk0Ntk4F114UAhhgwVCfMmp2YoPfUdrnOKYBM5u04g&s=10">
+
+    <img onclick="openImg(this.src)"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQemd8LPBYNtjozpaHoUxYZyeFAXw08lD_GISfzGWBjvQ&s=10">
+
+    <img onclick="openImg(this.src)"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIuzVc0aY8KZeHjpf3EGymyDWaj7JxtWxnx6OL2wsOgQ&s=10">
+
+    <img onclick="openImg(this.src)"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqx6Q3B5OUSFz8bJTO4LXz7Qid-aCxH9iUubYjLB3uWw&s">
+
+  </div>
+</section>
+
+
+<!-- IMAGE MODAL -->
+<div class="modal" id="modal" onclick="closeImg()">
+
+  <span class="close">&times;</span>
+
+  <img id="bigImage">
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <b>⚡ STARK INDUSTRIES</b>
+  <br><br>
+  IRON MAN FAN PROJECT • SYSTEM ONLINE
+</footer>
+
+
+<script>
+
+/* CONTROL PANEL */
+
+function activate(message){
+
+  document.getElementById("console").innerHTML =
+    "> " + message +
+    "<br>> SYSTEM STATUS: <span style='color:#00ff91'>ONLINE</span>";
+
+}
+
+
+/* GALLERY */
+
+function openImg(src){
+
+  document.getElementById("modal").style.display="flex";
+
+  document.getElementById("bigImage").src=src;
+
+}
+
+function closeImg(){
+
+  document.getElementById("modal").style.display="none";
+
+}
+
+
+/* ESCAPE KEY CLOSES IMAGE */
+
+document.addEventListener("keydown",function(e){
+
+  if(e.key==="Escape"){
+    closeImg();
+  }
+
+});
+
+</script>
+
+</body>
+</html>
